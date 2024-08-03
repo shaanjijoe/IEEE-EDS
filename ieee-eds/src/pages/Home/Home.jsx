@@ -1,8 +1,8 @@
 import React from "react";
 import Autoplay from "embla-carousel-autoplay"
 import { Link } from "react-router-dom";
-import topimage from './images/topimage.jpg';
-import eventPoster from './images/eventPoster.jpg';
+import topimage from '../../assets/images/topimage.jpg';
+import eventPoster from '../../assets/images/eventPoster.jpg';
 import {
   Carousel,
   CarouselContent,
