@@ -1,8 +1,13 @@
 import React from "react";
 import Autoplay from "embla-carousel-autoplay"
 import { Link } from "react-router-dom";
-import topimage from './images/topimage.jpg';
-import eventPoster from './images/eventPoster.jpg';
+import { useState, useEffect } from "react";
+
+import topimage from '../../assets/topimage.jpg';
+import Logo from '../../assets/Logo.jpeg';
+import eventPoster from '../../assets/eventPoster.jpg';
+
+
 import {
   Carousel,
   CarouselContent,
@@ -12,43 +17,142 @@ import {
 } from "@/components/ui/carousel"
 
 
-
 const Home = () => {
+  const images2 = [
+    { src: topimage, alt: 'team' },
+    { src: Logo, alt: 'logo' },
+    { src: topimage, alt: 'team' },
+    { src: Logo, alt: 'logo' },
+    { src:eventPoster, alt: 'event'},
+  ];
+
+  const [showImage, setShowImage] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowImage(false);
+      } else {
+        setShowImage(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return <>
-    <div>navbar</div>
-    <img src={topimage} alt="team" />
-    <div className="text-center">IEEE Electron Device Society Student Branch Chapter</div> 
-    <div className="text-center">About us</div>
-    <div className="text-xs">
-      IEEE IS THE WORLD'S LARGEST TECHNICAL PROFESSIONAL ORGANIZATION DEDICATED TO ADVANCING TECHNOLOGY FOR THE BENEFIT OF HUMANITY. IEE AIMS TO SERVE PROFESSIONALS INVOLVED IN ALL ASPECTS OF THE ELECTRICAL, ELECTRONI9CS AND COMPUTING FIELDS AND RELATED AREAS OF SCIENCE AND TECHNOLOGY WITH THE NECESSARY RESOURCES FOR THE PROGRESSION OF MODERN CIVILIZATION. THE IEEE BODY APPROVED THE FORMATION OF THE IEEE NANOTECHNOLOGY COUNCIL AND ITS FIELD OF INTEREST ON FEBRUARY 17, 2022. THE IEEE NANOTECHNOLOGY COUNCIL SUPPORTS THE ADVANCEMENT AND COORDINATION OF WORKS IN THE FIELD OF NANOTECHNOLOGY BY SUPPORTING THE THEORY, DESIGN AND DEVELOPMENT OF NANOTECHNOLOGY AND ITS SCIENTIFIC, ENGINEERING, AND INDUSTRIAL APPLICATION. THE IEEE NANOTECHNOLOGY COUNCIL IS PART OF THE DIVISION- CIRCUITS AND DEVICES AND IS MADE UP OF 23 MEMBER SOCIETIES AND HAS MANY CHAPTERS. IN THIS STUDENT CHAPTER, WE AT IIT PATNA IS TRYING TO CREATE AN INTERACTIVE PLATFORM FOR THE STUDENT MEMBERS TO DISCUSS AND COLLABORATE WITH THE ACADEMICIANS AND INDUSTRY PROFESSIONAL WHO ARE WORKING IN THE NANOTECHNOLOGY FIELD. FURTHER, THE IEEE NTC STUDENT CHAPTER COVERS A VAST VARIETY OF TOPICS CONSISTING OF PHOTONICS, OPTOELECTRONICS, PHOTOVOLTAIC, MEMRISTIVE TECHNOLOGIES, THE INTERNET OF THINGS, AND SO ON. THE MAJOR AIM OF THIS STUDENT CHAPTER IS TO DEVELOP THE  YOUNG PROFESSIONALS TOWARDS THE RECENT DEVELOPMENT IN NANOTECHNOLOGY AND UTILIZE THERE SKILLS FOR THE WELFARE OF SOCIETY AND HUMANITY.
+
+
+
+
+    <div className={`relative w-full ${showImage ? 'h-96' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden mb-10`}>
+        <img
+          src={topimage}
+          alt="IIT Patna"
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out ${showImage ? 'transform translate-y-0' : 'transform -translate-y-1/2'}`}
+        />
+        {/* <div className="absolute inset-0 flex items-center justify-center mt-56 text-white text-center z-10">
+          <h2 className="text-xl md:text-xl font-bold">IEEE Electron Device Society Student Branch Chapter</h2>
+        </div> */}
     </div>
-    <div className="flex justify-center"><Link to="/events" className="text-center">Upcoming Events</Link></div>
-    <div className="flex justify-center"><a href="https://www.google.com">regis</a></div>
-    <div className="flex justify-center "><img className=" w-1/2 h-1/2 " src={eventPoster}></img></div>
-    <div className="w-3/4 mx-auto">
-      <Carousel plugins={[
-        Autoplay({
+
+
+    
+    {/* <div className="text-3xl text-center">IEEE Electron Device Society Student Branch Chapter</div>  */}
+    <h2 className="text-3xl font-bold text-center mb-8">About us</h2>
+    <div className="text-sm m-10 text-justify">
+    IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE aims to serve professionals involved in all aspects of the electrical, electronics, and computing fields, as well as related areas of science and technology, by providing the necessary resources for the progression of modern civilization. The IEEE body approved the formation of the IEEE Nanotechnology Council and its field of interest on February 17, 2022. The IEEE Nanotechnology Council supports the advancement and coordination of work in the field of nanotechnology by fostering the theory, design, and development of nanotechnology and its scientific, engineering, and industrial applications. The IEEE Nanotechnology Council is part of the Division of Circuits and Devices, is made up of 23 member societies, and has many chapters. In this student chapter at IIT Patna, we are creating an interactive platform for student members to discuss and collaborate with academicians and industry professionals working in the nanotechnology field. Further, the IEEE NTC student chapter covers a vast variety of topics, including photonics, optoelectronics, photovoltaic, memristive technologies, the Internet of Things, and more. The major aim of this student chapter is to develop young professionals in the recent developments in nanotechnology and to utilize their skills for the welfare of society and humanity.    
+    </div>
+
+    
+  
+
+    <div className="flex items-center justify-center mt-20 mb-20">
+    <div className="flex space-x-10">
+      <Link
+        to="/events"
+        className="inline-flex items-center justify-center border rounded transition border-blue-500 text-black hover:bg-blue-500 hover:text-white px-4 py-2 text-base"
+      >
+        Upcoming Events
+      </Link>
+      <a
+        href="https://www.google.com"
+        className="inline-flex items-center justify-center border rounded transition border-blue-500 text-black hover:bg-blue-500 hover:text-white px-4 py-2 text-base"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Register
+      </a>
+    </div>
+  </div>
+
+    
+{/* 
+    <div className="flex justify-center"><Link to="/events" className="text-3xl font-bold text-center m-10">Upcoming Events</Link></div>
+    <div className="flex justify-center"><a href="https://www.google.com">regis</a></div> */}
+
+
+
+<div className="relative w-full h-screen bg-gray-100 flex items-center justify-center mb-20">
+      <div className="relative z-10 flex justify-center">
+        <img className="w-5/6 h-auto mt-20 mb-20" src={eventPoster} alt="Event Poster" />
+      </div>
+    </div>
+
+
+
+    <div className="w-3/4 h-1/4 mx-auto">
+        <Carousel
+          plugins={[
+          Autoplay({
+          jump: true,
           delay: 3000,
         }),
-      ]}>
-      <CarouselContent>
-        <CarouselItem><img src={topimage} alt="team" /></CarouselItem>
-        <CarouselItem><img src={topimage} alt="team" /></CarouselItem>
-        <CarouselItem><img src={topimage} alt="team" /></CarouselItem>
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext /></Carousel>
-    </div>
-    <div className="flex justify-center">
-      <iframe
-        className="border-none"
-        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&bgcolor=%23ffffff&showTz=0&showPrint=0&src=cjc0OWhrczE4cDM0N3Zva29hdWVpbXJhcjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23009688"
-        style={{ width: "75%", height: "600px" }}
-        frameBorder="0"
-        scrolling="no"
-        title="Google Calendar"
-      ></iframe>
-    </div>
+        ]}
+        className='w-full h-full'
+        >
+        <CarouselContent >
+          {images2.map((image, index) => (
+            <CarouselItem className='relative flex items-center justify-center' key={index}>
+              <div className="relative w-full h-full overflow-hidden flex items-center justify-center"><img className="flex justify-center h-72 w-auto items-center" src={image.src} alt={image.alt} /></div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      </div>
+
+
+
+      <div className="footer mt-20  bg-gray-100 ">
+        <footer className="text-center text-sm py-4">
+          <div>IEEE NTC Student Branch Chapter IIT Patna © 2024</div>
+          <div>Developer: IG</div>
+        </footer>
+      </div>
+
+  
+
+
+
+    {/* <div className="relative w-full h-screen bg-gray-200 flex items-center justify-center">
+      <div className="absolute inset-0 bg-gray-200"></div>
+      <div className="relative z-10 flex justify-center">
+        <iframe
+          className="border-none"
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&bgcolor=%23ffffff&showTz=0&showPrint=0&src=cjc0OWhrczE4cDM0N3Zva29hdWVpbXJhcjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23009688"
+          style={{ width: '200%', height: '600px' }}
+          frameBorder="0"
+          scrolling="no"
+          title="Google Calendar"
+        ></iframe>
+      </div>
+    </div> */}
+
+    
+
+
     
 
   </>
@@ -56,3 +160,58 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import topimage from '../../assets/topimage.jpg';
+
+// const Home = () => {
+//   const [showImage, setShowImage] = useState(true);
+
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (window.scrollY > 200) {
+//         setShowImage(false);
+//       } else {
+//         setShowImage(true);
+//       }
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return (
+//     <div>
+//       <div className={`relative w-full ${showImage ? 'h-80' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden`}>
+//         <img
+//           src={topimage}
+//           alt="IIT Patna"
+//           className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out ${showImage ? 'transform translate-y-0' : 'transform -translate-y-1/2'}`}
+//         />
+//         <div className="absolute inset-0 flex items-center justify-center text-white text-center z-10">
+//           <h2 className="text-4xl md:text-6xl font-bold">Sponsors</h2>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
