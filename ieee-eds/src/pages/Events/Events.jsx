@@ -145,8 +145,8 @@ const Events = () => {
           <Slider {...highlightSettings}>
             {highlightImages.map((image, index) => (
               <div key={index} className="relative">
-                <div className="w-full h-[400px] md:h-[600px] overflow-hidden"> {/* Fixed height and width */}
-                  <img src={image} alt={`Highlight ${index + 1}`} className="w-full h-full object-contain" /> {/* Maintain aspect ratio */}
+                <div className="w-full h-[400px] md:h-[600px] overflow-hidden">
+                  <img src={image} alt={`Highlight ${index + 1}`} className="w-full h-full object-contain" />
                 </div>
               </div>
             ))}
