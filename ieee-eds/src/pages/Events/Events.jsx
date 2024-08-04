@@ -122,7 +122,7 @@ const Events = () => {
         </div>
       </div> */}
 
-    <div className={`relative w-full ${showImage ? 'h-80' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden`}>
+    <div className={`relative w-full ${showImage ? 'h-96' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden`}>
         <img
           src={topimage}
           alt="IIT Patna"
