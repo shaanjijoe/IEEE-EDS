@@ -45,21 +45,21 @@ const Home = () => {
 
 
 
-    <div className={`relative w-full ${showImage ? 'h-96' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden mb-10`}>
+<div className={`relative w-full ${showImage ? 'h-80' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden`}>
         <img
           src={topimage}
           alt="IIT Patna"
           className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out ${showImage ? 'transform translate-y-0' : 'transform -translate-y-1/2'}`}
         />
-        {/* <div className="absolute inset-0 flex items-center justify-center mt-56 text-white text-center z-10">
-          <h2 className="text-xl md:text-xl font-bold">IEEE Electron Device Society Student Branch Chapter</h2>
-        </div> */}
-    </div>
+        <div className="absolute inset-0 flex items-center justify-center text-white text-center z-10">
+          <h2 className="text-4xl md:text-6xl font-bold"></h2>
+        </div>
+      </div>
 
 
     
     {/* <div className="text-3xl text-center">IEEE Electron Device Society Student Branch Chapter</div>  */}
-    <h2 className="text-3xl font-bold text-center mb-8">About us</h2>
+    <h2 className="text-3xl font-bold text-center mb-8 mt-10">About us</h2>
     <div className="text-sm m-10 text-justify">
     IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE aims to serve professionals involved in all aspects of the electrical, electronics, and computing fields, as well as related areas of science and technology, by providing the necessary resources for the progression of modern civilization. The IEEE body approved the formation of the IEEE Nanotechnology Council and its field of interest on February 17, 2022. The IEEE Nanotechnology Council supports the advancement and coordination of work in the field of nanotechnology by fostering the theory, design, and development of nanotechnology and its scientific, engineering, and industrial applications. The IEEE Nanotechnology Council is part of the Division of Circuits and Devices, is made up of 23 member societies, and has many chapters. In this student chapter at IIT Patna, we are creating an interactive platform for student members to discuss and collaborate with academicians and industry professionals working in the nanotechnology field. Further, the IEEE NTC student chapter covers a vast variety of topics, including photonics, optoelectronics, photovoltaic, memristive technologies, the Internet of Things, and more. The major aim of this student chapter is to develop young professionals in the recent developments in nanotechnology and to utilize their skills for the welfare of society and humanity.    
     </div>

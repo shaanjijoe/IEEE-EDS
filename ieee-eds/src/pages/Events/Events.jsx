@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import topimage from '../../assets/topimage.jpg';
 import Slider from "react-slick";
 import headerImage from '../../assets/images/topimage.jpg';
 import pastEventImage1 from '../../assets/images/inauguration.jpeg';
@@ -97,14 +98,43 @@ const Events = () => {
     prevArrow: <PrevArrow />,
   };
 
+
+  const [showImage, setShowImage] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowImage(false);
+      } else {
+        setShowImage(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div>
-      <div className="relative">
+      {/* <div className="relative">
+        
         <img src={headerImage} alt="Header Background" className="w-full h-56 object-cover" />
         <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
           <h1 className="text-white text-4xl font-bold">Events</h1>
         </div>
+      </div> */}
+
+    <div className={`relative w-full ${showImage ? 'h-80' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden`}>
+        <img
+          src={topimage}
+          alt="IIT Patna"
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out ${showImage ? 'transform translate-y-0' : 'transform -translate-y-1/2'}`}
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-white text-center z-10">
+          <h2 className="text-4xl md:text-6xl font-bold">Events</h2>
+        </div>
       </div>
+
+
+
       <div className="mt-8 text-center p-5">
         <h2 className="text-3xl font-semibold mb-5">Upcoming Events</h2>
         <Slider {...settings}>
