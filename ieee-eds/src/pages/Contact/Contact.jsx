@@ -70,8 +70,9 @@ const CenteredButton = ({ text, link }) => {
 
 const GoogleMapIframe = () => {
   const url = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14652.027852575742!2d84.85120883288921!3d25.535753437576226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6954a4ab%3A0x6ce8f1b9fc2aa02a!2sIndian%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1721721854443!5m2!1sen!2sin';
+  
   return (
-    <div className="flex justify-center items-center w-full h-96 pl-48 pr-48">
+    <div className="flex justify-center items-center w-full h-96 px-4 sm:px-12 md:px-24 lg:px-48">
       <iframe
         src={url}
         className="w-full h-full border-none"
@@ -83,5 +84,4 @@ const GoogleMapIframe = () => {
     </div>
   );
 };
-
 export default Contact;
