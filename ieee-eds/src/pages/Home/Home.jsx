@@ -93,7 +93,7 @@ const Home = () => {
 
 
 
-<div className="relative w-full h-screen bg-gray-100 flex items-center justify-center mb-20">
+    <div className="relative w-full h-4/5 bg-gray-100 flex items-center justify-center mb-20">
       <div className="relative z-10 flex justify-center">
         <img className="w-5/6 h-auto mt-20 mb-20" src={eventPoster} alt="Event Poster" />
       </div>
@@ -114,7 +114,7 @@ const Home = () => {
         <CarouselContent >
           {images2.map((image, index) => (
             <CarouselItem className='relative flex items-center justify-center' key={index}>
-              <div className="relative w-full h-full overflow-hidden flex items-center justify-center"><img className="flex justify-center h-72 w-auto items-center" src={image.src} alt={image.alt} /></div>
+              <div className="relative w-full h-full overflow-hidden flex items-center justify-center"><img className="flex justify-center h-1/2 w-auto items-center" src={image.src} alt={image.alt} /></div>
             </CarouselItem>
           ))}
         </CarouselContent>
