@@ -58,7 +58,7 @@ const Home = () => {
 
 
 
-<div className={`relative w-full ${showImage ? 'h-96' : 'h-48'} transition-all duration-500 ease-in-out overflow-hidden`}>
+<div className={`relative w-full ${showImage ? 'h-96' : 'h-0'} transition-all duration-500 ease-in-out overflow-hidden`}>
         <img
           src={topimage}
           alt="IIT Patna"
@@ -115,7 +115,7 @@ const Home = () => {
 
 
 
-    <div className="w-3/4 h-1/4 mx-auto">
+    <div className="w-3/4 h-1/5 mx-auto">
         <Carousel
           plugins={[
           Autoplay({
@@ -139,7 +139,7 @@ const Home = () => {
 
 
 
-      <div className="footer mt-20  bg-gray-100 ">
+      <div className="footer  bg-gray-100 ">
         <footer className="text-center text-sm py-4">
           <div>IEEE NTC Student Branch Chapter IIT Patna © 2024</div>
           <div>Developer: IG</div>
