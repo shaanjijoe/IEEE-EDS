@@ -15,6 +15,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const heading = "IEEE EDS Student Branch IITP";
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
@@ -22,7 +23,8 @@ const Navbar = () => {
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={logo} className="h-20" alt="IEEE Electron Device Society Student Branch Logo" />
           <span className="self-center text-2xl font-semibold dark:text-white">
-            IEEE Electron Device Society Student Branch
+            {heading}
+          {/* IEEE Electron Device Society Student Branch */}
           </span>
         </a>
 

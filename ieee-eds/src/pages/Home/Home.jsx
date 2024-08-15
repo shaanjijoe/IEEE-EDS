@@ -6,6 +6,10 @@ import { useState, useEffect } from "react";
 import topimage from '../../assets/topimage.jpg';
 import Logo from '../../assets/Logo.jpeg';
 import eventPoster from '../../assets/eventPoster.jpg';
+import highlightImage1 from '../../assets/images/event1.jpeg';
+import highlightImage2 from '../../assets/images/event2.jpeg';
+import highlightImage3 from '../../assets/images/event3.jpeg';
+import highlightImage4 from '../../assets/images/event4.jpeg';
 
 
 import {
@@ -18,13 +22,22 @@ import {
 
 
 const Home = () => {
+  // const images2 = [
+  //   { src: topimage, alt: 'team' },
+  //   { src: Logo, alt: 'logo' },
+  //   { src: topimage, alt: 'team' },
+  //   { src: Logo, alt: 'logo' },
+  //   { src:eventPoster, alt: 'event'},
+  // ];
+
   const images2 = [
-    { src: topimage, alt: 'team' },
-    { src: Logo, alt: 'logo' },
-    { src: topimage, alt: 'team' },
-    { src: Logo, alt: 'logo' },
-    { src:eventPoster, alt: 'event'},
+    { src: highlightImage1, alt: 'celebration' },
+    { src: highlightImage2, alt: 'celebration' },
+    { src: highlightImage3, alt: 'celebration' },
+    { src: highlightImage4, alt: 'celebration' },
   ];
+
+  const aboutUs = "IEEE is the world's largest professional association dedicated to advancing technological innovation and excellence for the benefit of humanity. IEEE and its members inspire a global community through IEEE's highly cited publications, conferences, technology standards, and professional and educational activities. The IEEE Electron Devices Society (EDS) is one of the technical societies & councils that you can join as an IEEE member. EDS began in 1952 as a committee of the Institute of Radio Engineers (IRE). With the merger in 1963 of the IRE and the American Institute of Radio Engineers, EDS became a technical group under the newly formed IEEE. In 1976 EDS became a society of IEEE. To respond to the more complex society structure and increased business activities, the Society established an Executive Office in 1990.";
 
   const [showImage, setShowImage] = useState(true);
 
@@ -52,16 +65,17 @@ const Home = () => {
           className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out ${showImage ? 'transform translate-y-0' : 'transform -translate-y-1/2'}`}
         />
         <div className="absolute inset-0 flex items-center justify-center text-white text-center z-10">
-          <h2 className="text-4xl md:text-6xl font-bold"></h2>
+          <div><h2 className="text-4xl md:text-6xl font-bold">IEEE-Electron Device Society</h2>
+          <h3 className="text-3xl md:text-4xl font-bold">STUDENT BRANCH CHAPTER</h3></div>
         </div>
       </div>
-
 
     
     {/* <div className="text-3xl text-center">IEEE Electron Device Society Student Branch Chapter</div>  */}
     <h2 className="text-3xl font-bold text-center mb-8 mt-10">About us</h2>
     <div className="text-sm m-10 text-justify">
-    IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE aims to serve professionals involved in all aspects of the electrical, electronics, and computing fields, as well as related areas of science and technology, by providing the necessary resources for the progression of modern civilization. The IEEE body approved the formation of the IEEE Nanotechnology Council and its field of interest on February 17, 2022. The IEEE Nanotechnology Council supports the advancement and coordination of work in the field of nanotechnology by fostering the theory, design, and development of nanotechnology and its scientific, engineering, and industrial applications. The IEEE Nanotechnology Council is part of the Division of Circuits and Devices, is made up of 23 member societies, and has many chapters. In this student chapter at IIT Patna, we are creating an interactive platform for student members to discuss and collaborate with academicians and industry professionals working in the nanotechnology field. Further, the IEEE NTC student chapter covers a vast variety of topics, including photonics, optoelectronics, photovoltaic, memristive technologies, the Internet of Things, and more. The major aim of this student chapter is to develop young professionals in the recent developments in nanotechnology and to utilize their skills for the welfare of society and humanity.    
+    {/* IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE aims to serve professionals involved in all aspects of the electrical, electronics, and computing fields, as well as related areas of science and technology, by providing the necessary resources for the progression of modern civilization. The IEEE body approved the formation of the IEEE Nanotechnology Council and its field of interest on February 17, 2022. The IEEE Nanotechnology Council supports the advancement and coordination of work in the field of nanotechnology by fostering the theory, design, and development of nanotechnology and its scientific, engineering, and industrial applications. The IEEE Nanotechnology Council is part of the Division of Circuits and Devices, is made up of 23 member societies, and has many chapters. In this student chapter at IIT Patna, we are creating an interactive platform for student members to discuss and collaborate with academicians and industry professionals working in the nanotechnology field. Further, the IEEE NTC student chapter covers a vast variety of topics, including photonics, optoelectronics, photovoltaic, memristive technologies, the Internet of Things, and more. The major aim of this student chapter is to develop young professionals in the recent developments in nanotechnology and to utilize their skills for the welfare of society and humanity.     */}
+    {aboutUs}
     </div>
 
     
