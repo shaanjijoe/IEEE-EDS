@@ -7,6 +7,11 @@ import topimage from '../../assets/topimage.jpg';
 import Logo from '../../assets/Logo.jpeg';
 import eventPoster from '../../assets/eventPoster.jpg';
 
+import highlightImage1 from '../../assets/images/event1.jpeg';
+import highlightImage2 from '../../assets/images/event2.jpeg';
+import highlightImage3 from '../../assets/images/event3.jpeg';
+import highlightImage4 from '../../assets/images/event4.jpeg';
+
 
 import {
   Carousel,
@@ -19,11 +24,10 @@ import {
 
 const Home = () => {
   const images2 = [
-    { src: topimage, alt: 'team' },
-    { src: Logo, alt: 'logo' },
-    { src: topimage, alt: 'team' },
-    { src: Logo, alt: 'logo' },
-    { src:eventPoster, alt: 'event'},
+    { src: highlightImage1, alt: '1' },
+    { src: highlightImage3, alt: '2' },
+    { src: highlightImage2, alt: '3' },
+    { src: highlightImage1, alt: '4'},
   ];
 
   const [showImage, setShowImage] = useState(true);
@@ -95,7 +99,7 @@ const Home = () => {
 
     <div className="relative w-full h-4/5 bg-gray-100 flex items-center justify-center mb-20">
       <div className="relative z-10 flex justify-center">
-        <img className="w-5/6 h-auto mt-20 mb-20" src={eventPoster} alt="Event Poster" />
+        <img className="w-5/6 h-auto mt-20 mb-0" src={eventPoster} alt="Event Poster" />
       </div>
     </div>
 
@@ -114,7 +118,7 @@ const Home = () => {
         <CarouselContent >
           {images2.map((image, index) => (
             <CarouselItem className='relative flex items-center justify-center' key={index}>
-              <div className="relative w-full h-full overflow-hidden flex items-center justify-center"><img className="flex justify-center h-1/2 w-auto items-center" src={image.src} alt={image.alt} /></div>
+              <div className="relative w-full h-full overflow-hidden flex items-center justify-center"><img className="flex justify-center h-3/4 w-auto items-center" src={image.src} alt={image.alt} /></div>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -125,7 +129,7 @@ const Home = () => {
 
 
 
-      <div className="footer mt-20  bg-gray-100 ">
+      <div className="footer mt-10  bg-gray-100 ">
         <footer className="text-center text-sm py-4">
           <div>IEEE NTC Student Branch Chapter IIT Patna © 2024</div>
           <div>Developer: IG</div>
