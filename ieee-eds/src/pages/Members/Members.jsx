@@ -1,35 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import topimage from '../../assets/topimage.jpg';
-import Convenorimage from '../../assets/images/Convenor_Image.jpg';
+import Convenorimage from '../../assets/images/members/PK_Tiwari_Convener.png';
+import Member1 from '../../assets/images/members/Ashraf_Chair.png';
+import Member2 from '../../assets/images/members/Prity_Sinha_Secretary.png';
+import Member3 from '../../assets/images/members/Sai_Katta_Webmaster.png';
+import Member4 from '../../assets/images/members/Subir_Das_Treasurer.png';
+import Member5 from '../../assets/images/members/Pushp_Vice_chair.png';
+import Speaker1 from '../../assets/images/members/Speaker_Sudeb_Dasgupta.png';
+import Speaker2 from '../../assets/images/members/Speaker_Yogendra_Yadav.png';
+
 
 const Members = () => {
   const [showImage, setShowImage] = useState(true);
 
   const speakers = [
     {
-      image: topimage,
+      image: Speaker1,
       // description: 'Secretary',
-      name: 'Speaker One',
-      url: 'https://www.companyone.com',
+      name: 'Prof. Sudeb Dasgupta',
+      url: 'https://www.linkedin.com/in/sudeb-dasgupta-2b19b64/',
     },
     {
-      image: 'https://via.placeholder.com/150',
+      image: Speaker2,
       // description: 'Secretary',
-      name: 'Speaker Two',
-      url: 'https://www.companytwo.com',
+      name: 'Mr. Yogendra Yadav',
+      url: 'https://www.linkedin.com/in/yogendra-yadav-8642a830/',
     },
-    {
-      image: 'https://via.placeholder.com/150',
-      // description: 'Secretary',
-      name: 'Speaker Three',
-      url: 'https://www.companythree.com',
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      // description: 'Secretary',
-      name: 'Speaker Four',
-      url: 'https://www.companyfour.com',
-    },
+    // {
+    //   image: 'https://via.placeholder.com/150',
+    //   // description: 'Secretary',
+    //   name: 'Speaker Three',
+    //   url: 'https://www.companythree.com',
+    // },
+    // {
+    //   image: 'https://via.placeholder.com/150',
+    //   // description: 'Secretary',
+    //   name: 'Speaker Four',
+    //   url: 'https://www.companyfour.com',
+    // },
     // {
     //   image: 'https://via.placeholder.com/150',
     //   description: 'Secretary',
@@ -46,35 +54,35 @@ const Members = () => {
 
   const members = [
     {
-      image: topimage,
-      description: 'Secretary',
-      name: 'Member One',
-      url: 'https://www.companyone.com',
+      image: Member1,
+      description: 'Chair',
+      name: 'Ashraf Maniyar',
+      url: 'https://www.linkedin.com/in/ashraf-maniyar-82845191/',
     },
     {
-      image: 'https://via.placeholder.com/150',
-      description: 'Secretary',
-      name: 'Member Two',
-      url: 'https://www.companytwo.com',
+      image: Member5,
+      description: 'Vice-Chair',
+      name: 'Pushp Raj',
+      url: '',
     },
     {
-      image: 'https://via.placeholder.com/150',
+      image: Member2,
       description: 'Secretary',
-      name: 'Member Three',
-      url: 'https://www.companythree.com',
+      name: 'Prity Sinha',
+      url: 'https://www.linkedin.com/in/prity-sinha-485610226/',
     },
     {
-      image: 'https://via.placeholder.com/150',
-      description: 'Secretary',
-      name: 'Member Four',
-      url: 'https://www.companyfour.com',
+      image: Member4,
+      description: 'Treasurer',
+      name: 'Subir Das',
+      url: 'https://www.linkedin.com/in/subir-das-763456150/',
     },
-    // {
-    //   image: 'https://via.placeholder.com/150',
-    //   description: 'Secretary',
-    //   name: 'Member Five',
-    //   url: 'https://www.companyfive.com',
-    // },
+    {
+      image: Member3,
+      description: 'Web-Master',
+      name: 'Sai Shirov Katta',
+      url: '',
+    },
   ];
 
   useEffect(() => {
@@ -107,13 +115,16 @@ const Members = () => {
   <img src={Convenorimage} className="w-48 h-48 md:w-64 md:h-64 m-4 ml-0" alt="Convenor" />
   <div className="flex flex-col items-center m-4 text-lg w-full md:w-96">
     <hr className="border-2 border-red-300 w-full" />
-    <h2 className="text-gray-600 text-2xl font-semibold m-3">Convenor</h2>
+    <h2 className="text-gray-600 text-2xl font-semibold m-3">Convener</h2>
     <hr className="border-2 border-red-300 w-full" />
-    <h3 className="p-2 font-bold">Dr Saurabh Kumar Pandey</h3>
+    <h3 className="p-2 font-bold">Dr. P.K. Tiwari</h3>
     <h5 className="p-2 mb-2">Associate Professor, IIT Patna</h5>
     <button className="bg-gray-400 text-black font-bold py-2 px-4 rounded-full hover:bg-gray-500 transition duration-300 w-full">
-      View Profile
-    </button>
+  <a href="https://www.linkedin.com/in/dr-pramod-kumar-tiwari-54089359/" target="_blank" rel="noopener noreferrer">
+    View Profile
+  </a>
+</button>
+
   </div>
 </div>
 
@@ -152,7 +163,7 @@ const MemberCard = ({ member }) => {
     <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center h-auto w-full">
       <img src={member.image} alt={member.name} className="h-48 w-48 mb-2 object-cover" />
       <div className="font-bold text-lg mb-2 text-center">{member.description}</div>
-      <div className="font-bold text-lg mb-2 text-center">{member.name}</div>
+      <div className=" text-lg mb-2 text-center">{member.name}</div>
       <button
         onClick={() => window.open(member.url, '_blank')}
         className="bg-gray-600 text-white px-6 py-2 rounded mt-auto"
@@ -167,9 +178,9 @@ const MemberCard = ({ member }) => {
 
 const SpeakersSection = ({ speakers }) => {
   return (
-    <div className="my-8 p-4">
+    <div className="my-8 p-4 max-w-screen-lg mx-auto">
       {/* <h2 className="text-3xl font-bold text-center mb-8"></h2> */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
         {speakers.map((speaker, index) => (
           <SpeakerCard key={index} speaker={speaker} />
         ))}
@@ -177,6 +188,7 @@ const SpeakersSection = ({ speakers }) => {
     </div>
   );
 };
+
 
 const SpeakerCard = ({ speaker }) => {
   return (
