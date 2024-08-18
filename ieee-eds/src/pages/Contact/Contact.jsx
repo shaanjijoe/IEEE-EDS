@@ -4,7 +4,7 @@ import topimage from '../../assets/topimage.jpg';
 const Contact = () => {
   const [showImage, setShowImage] = useState(true);
   const mapUrl = 'https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=IIT,%20Bihta%20Kanpa%20Rd,%20Patna,%20Dayalpur%20Daulatpur,%20Bihar%20801106+(IEEE-NTC)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed';
-
+  const email = "ieee.eds@iitp.ac.in";
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
@@ -34,7 +34,7 @@ const Contact = () => {
 
       {/* Info Section */}
       <div className="w-full p-6 mt-6 text-center bg-gray-100">
-        <p className="mb-4">Email- <a href="mailto:jeeentcchapter@iitp.ac.in" className="text-blue-500">jeeentcchapter@iitp.ac.in</a></p>
+        <p className="mb-4">Email- <a href={`mailto:${email}`} className="text-blue-500">{email}</a></p>
         <p className="mb-4">Address- Department of Electrical Engineering</p>
         <p className="mb-4">Indian Institute of Technology Patna</p>
         <p className="mb-4">Bihta, Patna, Bihar-801106</p>

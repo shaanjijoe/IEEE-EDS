@@ -15,16 +15,15 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const heading = "IEEE EDS Student Branch IITP";
+  const heading = "IEEE EDS Student Branch Indian Institute of Technology Patna";
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={logo} className="h-20" alt="IEEE Electron Device Society Student Branch Logo" />
-          <span className="self-center text-2xl font-semibold dark:text-white">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 sm:p-4">
+        <a href="#" className="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse">
+          <img src={logo} className="h-10 sm:h-14" alt="IEEE Electron Device Society Student Branch Logo" />
+          <span className="self-center text-ellipsis sm:text-lg md:text-xl font-semibold dark:text-white">
             {heading}
-          {/* IEEE Electron Device Society Student Branch */}
           </span>
         </a>
 
@@ -54,7 +53,7 @@ const Navbar = () => {
         </button>
 
         <div className={`w-full md:block md:w-auto ${isOpen ? 'block' : 'hidden'}`} id="navbar-multi-level">
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <Link
                 to="/"
@@ -103,10 +102,6 @@ const Navbar = () => {
   );
 };
 
-// export default Navbar;
-
-
-// export default Navbar;
 
 
 
