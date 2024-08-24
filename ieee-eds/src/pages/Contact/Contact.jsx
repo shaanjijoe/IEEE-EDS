@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import topimage from '../../assets/topimage.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+const email = "ieee.eds@iitp.ac.in";
+const facebookUrl = "https://www.facebook.com/profile.php?id=61561785816315";
+const linkedinUrl = "https://www.linkedin.com/in/ieee-eds-student-chapter-iit-patna-4874a9317/";
+const mapUrl = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14652.027852575742!2d84.85120883288921!3d25.535753437576226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6954a4ab%3A0x6ce8f1b9fc2aa02a!2sIndian%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1721721854443!5m2!1sen!2sin';
+
 
 const Contact = () => {
   const [showImage, setShowImage] = useState(true);
-  const mapUrl = 'https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=IIT,%20Bihta%20Kanpa%20Rd,%20Patna,%20Dayalpur%20Daulatpur,%20Bihar%20801106+(IEEE-NTC)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed';
-  const email = "ieee.eds@iitp.ac.in";
+
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
@@ -40,8 +47,11 @@ const Contact = () => {
         <p className="mb-4">Bihta, Patna, Bihar-801106</p>
       </div>
 
-      {/* Centered Button */}
-      <CenteredButton text="LinkedIn" link="https://example.com" />
+      {/* Social Media Integration Section */}
+      <div className="w-full flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 mt-6 mb-6">
+        <LinkedInPageBox />
+        <FacebookPageBox />
+      </div>
 
       {/* Google Map Iframe */}
       <GoogleMapIframe />
@@ -55,26 +65,62 @@ const Contact = () => {
   );
 };
 
-const CenteredButton = ({ text, link }) => {
+const FacebookPageBox = () => {
   return (
-    <div className="flex justify-center mt-6 mb-6">
-      <a href={link} className="text-decoration-none">
-      <button className="w-full max-w-screen-md mx-4 bg-gray-600 text-white py-2 px-6 rounded shadow-md hover:shadow-lg transition-shadow duration-300">
-        {text}
-      </button>
+    <div className="bg-white shadow-lg rounded-lg w-full max-w-md">
+      <div className="p-6">
+        <div className="flex items-center mb-4">
+          <FontAwesomeIcon icon={faFacebook} className="text-blue-600 mr-2" size="2x" />
+          <h2 className="text-2xl font-bold">Our Facebook Page</h2>
+        </div>
+        <p className="mb-4">
+          Like our Facebook page to stay updated with our latest posts, events, and special offers.
+        </p>
+        <a
+          href={facebookUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+        >
+          <FontAwesomeIcon icon={faFacebook} className="mr-2" />
+          Visit Our Page
+        </a>
+      </div>
+    </div>
+  );
+};
 
-      </a>
+const LinkedInPageBox = () => {
+  
+  return (
+    <div className="bg-white shadow-lg rounded-lg w-full max-w-md">
+      <div className="p-6">
+        <div className="flex items-center mb-4">
+          <FontAwesomeIcon icon={faLinkedin} className="text-blue-500 mr-2" size="2x" />
+          <h2 className="text-2xl font-bold">Our LinkedIn Page</h2>
+        </div>
+        <p className="mb-4">
+          Connect with us on LinkedIn to stay updated with our latest news, events, and job opportunities.
+        </p>
+        <a
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+        >
+          <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+          Visit Our Page
+        </a>
+      </div>
     </div>
   );
 };
 
 const GoogleMapIframe = () => {
-  const url = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14652.027852575742!2d84.85120883288921!3d25.535753437576226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6954a4ab%3A0x6ce8f1b9fc2aa02a!2sIndian%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1721721854443!5m2!1sen!2sin';
-  
   return (
     <div className="flex justify-center items-center w-full h-96 px-4 sm:px-12 md:px-24 lg:px-48">
       <iframe
-        src={url}
+        src={mapUrl}
         className="w-full h-full border-none"
         allowFullScreen
         loading="lazy"
@@ -84,4 +130,5 @@ const GoogleMapIframe = () => {
     </div>
   );
 };
+
 export default Contact;

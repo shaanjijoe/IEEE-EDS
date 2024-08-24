@@ -6,47 +6,55 @@ const Sponsors = () => {
   const data = [
     {
       sponsorship: 'Gold',
-      Perks: ['Feature 1 is longer and descriptive', 'Feature 2 is also detailed and lengthy', 'Feature 3'],
-      price: '$1000',
+      Perks: ['Company/organization logo will be placed on website, online and offline activities like invited talks and workshop.',
+         'Offer 5 min. presentation on company/organization services.',
+          'Promote company profile on various platforms.',
+          'Company/organization logo will be placed on website and online and offline activities like invited talks and workshop.'
+        ],
+      price: 'INR 25000',
     },
     {
       sponsorship: 'Silver',
-      Perks: ['Feature 1', 'Feature 2 with more details'],
-      price: '$750',
+      Perks: ['Company/organization logo will be placed on website, online and offline activities like invited talks and workshop.', 
+        'Offer 5 min. presentation on company/organization services.', 
+        'Promote company profile on various platforms.',
+        'Company/organization logo will be placed on website and online and offline activities like invited talks and workshop.'
+      ],
+      price: 'INR 1500',
     },
     {
       sponsorship: 'Bronze',
-      Perks: ['Feature 1'],
-      price: '$500',
+      Perks: ['Company/organization logo will be placed on website, online and offline activities like invited talks and workshop.'],
+      price: 'INR 500',
     },
   ];
 
   const sponsors = [
-    {
-      image: topimage,
-      name: 'Company One',
-      url: 'https://www.companyone.com',
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'Company Two',
-      url: 'https://www.companytwo.com',
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'Company Three',
-      url: 'https://www.companythree.com',
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'Company Four',
-      url: 'https://www.companyfour.com',
-    },
-    {
-      image: 'https://via.placeholder.com/150',
-      name: 'Company Five',
-      url: 'https://www.companyfive.com',
-    },
+    // {
+    //   image: topimage,
+    //   name: 'Company One',
+    //   url: 'https://www.companyone.com',
+    // },
+    // {
+    //   image: 'https://via.placeholder.com/150',
+    //   name: 'Company Two',
+    //   url: 'https://www.companytwo.com',
+    // },
+    // {
+    //   image: 'https://via.placeholder.com/150',
+    //   name: 'Company Three',
+    //   url: 'https://www.companythree.com',
+    // },
+    // {
+    //   image: 'https://via.placeholder.com/150',
+    //   name: 'Company Four',
+    //   url: 'https://www.companyfour.com',
+    // },
+    // {
+    //   image: 'https://via.placeholder.com/150',
+    //   name: 'Company Five',
+    //   url: 'https://www.companyfive.com',
+    // },
   ];
 
   useEffect(() => {
@@ -107,7 +115,7 @@ const BecomeOurSponsors = () => {
       <div className="text-center mb-8">
         <p>Interested in becoming a sponsor? Contact us through the information below.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {contacts.map((contact, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-2">{contact.name}</h3>
@@ -115,7 +123,7 @@ const BecomeOurSponsors = () => {
             <p>Phone: <a href={`tel:${contact.phone}`} className="text-blue-500">{contact.phone}</a></p>
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="footer mt-8">
         <footer className="text-center text-sm py-4">
           <div>IEEE NTC Student Branch Chapter IIT Patna © 2024</div>
