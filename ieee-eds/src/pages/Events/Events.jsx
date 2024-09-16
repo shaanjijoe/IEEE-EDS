@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import topimage from '../../assets/topimage.jpg';
 import Slider from "react-slick";
 import headerImage from '../../assets/images/topimage.jpg';
+import newEventImage from '../../assets/eventImages/sept18.jpeg';
 import pastEventImage1 from '../../assets/images/inauguration.jpeg';
 import pastEventImage2 from '../../assets/images/guest_talk_prof_sudeb_dasgupta.jpeg';
 import highlightImage1 from '../../assets/images/event1.jpeg';
@@ -137,6 +138,17 @@ const Events = () => {
 
       <div className="mt-8 text-center p-5">
         <h2 className="text-3xl font-semibold mb-5">Upcoming Events</h2>
+
+        <div key={0} className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow mx-4 mb-4 md:mx-6 md:mb-6 lg:mx-7 lg:mb-7">
+          <img src={newEventImage} alt="IEEE EDS Distinguished Lecture" className="w-full h-auto object-cover" />
+          <div className="p-4">
+            <h3 className="text-lg md:text-xl font-bold mb-2">Process integration of CMOS TFTs for monolithic 3D-IC applications</h3>
+            <p className="text-gray-600 text-sm md:text-base">September 18th, 2024</p>
+          </div>
+        </div>
+
+
+
         <Slider {...settings}>
           {events.map((event, index) => (
             <div key={index} className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow mx-3">
