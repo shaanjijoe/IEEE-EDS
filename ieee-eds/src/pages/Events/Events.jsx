@@ -11,6 +11,9 @@ import highlightImage3 from '../../assets/images/event3.jpeg';
 import highlightImage4 from '../../assets/images/event4.jpeg';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 const events = [
   {
@@ -50,27 +53,25 @@ const highlightImages = [
 ];
 
 const NextArrow = (props) => {
-  const { style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={`absolute top-1/2 right-4 transform -translate-y-1/2 bg-black text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-700 w-10 h-10 z-10`}
-      style={{ ...style }}
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-700 z-10"
       onClick={onClick}
     >
-      <span className="text-2xl">&gt;</span>
+      <FontAwesomeIcon icon={faChevronRight} className="text-xl" />
     </div>
   );
 };
 
 const PrevArrow = (props) => {
-  const { style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={`absolute top-1/2 left-4 transform -translate-y-1/2 bg-black text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-700 w-10 h-10 z-10`}
-      style={{ ...style }}
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-700 z-10"
       onClick={onClick}
     >
-      <span className="text-2xl">&lt;</span>
+      <FontAwesomeIcon icon={faChevronLeft} className="text-xl" />
     </div>
   );
 };
@@ -149,23 +150,32 @@ const Events = () => {
 
 
 
-        <Slider {...settings}>
-          {events.map((event, index) => (
-            <div key={index} className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow mx-3">
-              <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
-              <p className="text-gray-600">{event.date} at {event.time}</p>
-              <p className="text-gray-700 mt-3 px-20">{event.description}</p>
-              <a
-                href={event.registrationLink}
-                className="mt-4 inline-block text-blue-500 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Register here
-              </a>
-            </div>
-          ))}
-        </Slider>
+        <Slider
+              {...settings}
+              className="px-4" // Add padding to prevent cutoffs
+            >
+              {events.map((event, index) => (
+                <div
+                  key={index}
+                  className="px-4" // Add padding inside each slide for spacing
+                >
+                  <div className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow mx-auto" style={{ maxWidth: '90%' }}>
+                    <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
+                    <p className="text-gray-600">{event.date} at {event.time}</p>
+                    <p className="text-gray-700 mt-3 px-20">{event.description}</p>
+                    <a
+                      href={event.registrationLink}
+                      className="mt-4 inline-block text-blue-500 hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register here
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+
       </div>
       <div className="mt-12 p-5">
         <h2 className="text-3xl font-semibold mb-5 text-center">Past Events</h2>
